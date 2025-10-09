@@ -1,0 +1,18 @@
+#Código final - parte 1 - Números X Comparações
+library(tidyverse)
+library(ggplot2)
+
+dados <- read.csv("dados.csv")
+
+ggplot(dados, aes(x = numero)) +
+  geom_point(aes(y = comparacoes_lista, color = "Lista")) +
+  geom_point(aes(y = comparacoes_arvore, color = "Árvores")) +
+  geom_smooth(aes(y = comparacoes_lista, color = "Lista"), se = FALSE, color = "black", size = 0.5, method = "loess") +
+  geom_smooth(aes(y = comparacoes_arvore, color = "Árvores"), se = FALSE, color = "black", size = 0.5, method = "loess") +
+  labs(
+    title = "Média de comparacões",
+    x = "Números",
+    y = "Comparações Listas Vs. Árvores",
+    caption = "Contrução própria",
+    color = "Estrutura de dados"
+  )
