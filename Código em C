@@ -112,6 +112,7 @@ int main() {
     fprintf(f, "numero,comparacoes_lista,comparacoes_arvore\n"); /*  Essa função é parecida com o printf, mas, ao invés de escrever na tela, escreve no arquivo 'f'.
        Os parâmetros são: fprintf(ponteiro_arquivo, "texto com formato", valores).  */ 
 
+    embaralha_numeros(vetor, n);
 
     // faz as buscas para os 10.000 números sorteados
     for (int i = 0; i < n; i++) {
