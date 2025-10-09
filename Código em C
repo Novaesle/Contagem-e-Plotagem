@@ -79,7 +79,7 @@ int main() {
     NoArv *arvore = NULL;
 
     int total = 10000;  // universo de valores de 0 a 9999
-    int n = 10000;      // quantidade de números a inserir e buscar
+    int n = 1000;      // quantidade de números a inserir e buscar
 
     srand(time(NULL)); //Inicializa o gerador de numeros aleatórios. Precisa ser usado com o rand().
 
