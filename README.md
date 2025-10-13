@@ -1,31 +1,32 @@
-# Comparação de Desempenho: Lista Encadeada vs Árvore Binária de Busca
+# Contagem e Plotagem | Estrutura de Dados
 
-Este projeto compara o número de **comparações realizadas** ao buscar elementos em uma **lista encadeada** e em uma **árvore binária de busca (BST)**, utilizando dados gerados aleatoriamente.  
+
+Este projeto analisa o número de **comparações realizadas** ao buscar elementos em uma **lista encadeada** e em uma **árvore binária de busca (BST)**, utilizando dados gerados aleatoriamente.  
+
 Os resultados são exportados em formato CSV e visualizados por meio de um gráfico construído no **R (ggplot2)**.
+
 
 ---
 
 ## 🧩 Estrutura do Projeto
 
-├── main.c # Código-fonte em C: gera dados de comparação
+├── main.c    
 
-├── dados.csv # Arquivo de saída com os resultados (gerado automaticamente)
+├── dados.csv  
 
-├── analise.R # Script em R: plota o gráfico comparativo
+├── analise.R 
 
-└── README.md # Este arquivo
+└── README.md 
 
 ---
 
-## ⚙️ Como funciona
-
-### 1. Geração dos dados (C)
+## Como funciona
 
 O programa em **C**:
 - Cria duas estruturas de dados:
   - **Lista encadeada**
   - **Árvore binária de busca**
-- Insere `n` números aleatórios (por padrão, 1000 valores únicos)
+- Insere `n` números aleatórios (por padrão, 10.000 valores únicos)
 - Busca os mesmos números nas duas estruturas, contando o número de **comparações** realizadas em cada busca
 - Armazena os resultados no arquivo `dados.csv`, no formato:
 
@@ -36,7 +37,7 @@ O programa em **C**:
 
 ---
 
-## 🧠 Objetivo didático
+## Objetivo didático
 
 O projeto permite **comparar o custo de busca** entre:
 - **Listas encadeadas**, que exigem buscas lineares (O(n))
@@ -46,47 +47,28 @@ Dessa forma, é possível visualizar empiricamente como a estrutura de dados imp
 
 ---
 
-## 🖥️ Como compilar e executar
+## Como compilar e executar
 
 ### 🔧 Compilação
+
 Use o GCC ou outro compilador C:
 
 
 gcc main.c -o comparacao
 
 ## ▶️ Execução
+
 ./comparacao
 
 Ao final, o programa exibirá:
 
 Arquivo 'dados.csv' gerado com sucesso!
 
-## 📊 Visualização (R)
-O script em R (analise.R) utiliza ggplot2 e tidyverse para plotar o gráfico das comparações.
+## Interpretação do Gráfico
 
-Dependências
-Instale as bibliotecas necessárias (caso ainda não tenha):
-install.packages("tidyverse")
-install.packages("ggplot2")
+O gráfico mostra, de maneira geral, a média de comparações que precisam ser feitas para se encontrar um número dentro de estruturas de dados com tamanho fixo de 10.000 elementos.
 
-Execução
-Execute o script no RStudio ou no terminal R:
-source("analise.R")
 
-Gráfico gerado:
-Pontos azuis representam comparações na árvore
-Pontos vermelhos representam comparações na lista
-Linhas de tendência mostram o comportamento médio de cada estrutura
-
-## 📈 Interpretação do Gráfico
-O gráfico mostra claramente a diferença de desempenho entre as duas estruturas de dados:
-Lista encadeada → o número de comparações cresce linearmente com o número de elementos.
-Cada busca precisa percorrer os nós um a um até encontrar (ou não) o valor.
-
-Árvore binária de busca → o número de comparações cresce de forma logarítmica.
-A busca é feita dividindo o conjunto a cada passo, o que reduz drasticamente o número médio de comparações.
-
-Em resumo: quanto maior o número de elementos, mais eficiente se torna a busca na árvore em comparação à lista.
 
 ## 🧩 Explicação das Funções (Código em C)
 
@@ -161,5 +143,9 @@ R / ggplot2 → Análise e visualização dos resultados
 
 ## ✍️ Créditos
 Projeto desenvolvido para fins didáticos, com foco em análise de estruturas de dados e visualização de desempenho.
-Autor: Carlos Carvalho
-Ano: 2025
+<center>
+Equipe:
+
+  Jader Rogerio dos Santos Neto | Guilherme Nunes Alves | Carlos Antunis Bonfim de Silva Santos | Pedro Henrique Santos da Silva | Carlos Leonardo Rodrigues Novaes Carvalho
+
+ </center>
